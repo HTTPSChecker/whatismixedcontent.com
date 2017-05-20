@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>What is HTTPS Mixed Content?</title>
+	<link rel="shortcut icon" href="/assets/images/favicon.png">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Francois+One|Open+Sans">
+	<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+	
+	<header>
+		<h1>&#8220;Mixed content issues arise from secure pages loading insecure resources&#8221;</h1>
+	</header>
+
+	<main>
+		<p>&#128274; HTTPS + &#9888; Mixed Content = &#9785; </p>
+		<p>You might have landed here searching for what is mixed content and why is showing on a website?
+			<br>Well, mixed content simply is when a HTTPS / secure website tries to load parts of the page such as some images or style of javascript for dynamic parts of the site over insecure HTTP.</p>
+
+		<h2>Examples <small><em>from badssl.com</em></small></h2>
+		<p>Here's a few examples of mixed content, you may need to view your browser's developer console to see the warning itself.</p>
+		<p><a href="https://mixed-script.badssl.com/">Active mixed content</a> - usually blocked in browsers by default, but does mean that blocked functionality will not work.</p>
+		<p><a href="https://mixed.badssl.com/">Passive mixed content</a> - usually allowed in browser by default, generally less of an issue but loses the secure green lock indicator.</p>
+		<p><a href="https://mixed-form.badssl.com/">Insecure form actions</a> - often missed when talking about mixed content, but generally browsers class this as mixed content when a page is secure, but it has a form that posts to an insecure place. This is bad as it could mean a page you think is secure, actually then leaks out your data over insecure HTTP.</p>
+		<p>Depending on your browser, the Passive &amp; Form examples you'll notice change the green lock to grey, while the Active one still appears with a green lock. This happens because the active issues are the worst for security as they would allow the content of the page to change, most browsers do not stand for this and outright block this, which then leaves the page still secure and so no need to change from green secure lock to grey.</p>
+
+		<h2>Site owners</h2>
+		<p>If you're a site owner, you can find these issues on pages by checking pages using the developer tools in your browser, or crawl your entire site using a desktop tool such as <a href="https://httpschecker.net/">HTTPS Checker</a>.</p>
+	</main>
+
+	<footer>
+		<p>I hope this has been a useful quick quide on mixed content issues on sites with HTTPS / SSL enabled.</p>
+		<p>This site is hosted on GitHub, feel free to open a pull request for any changes to help improve this resource for others.</p>
+	</footer>
+
+</body>
+</html>
